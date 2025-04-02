@@ -1,0 +1,109 @@
+.InfoLab
+{
+    background-color: white;
+    width: 90%;
+    margin-left: 40px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 1.8%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.heading
+{
+    text-align: center;
+    font-size: 30px;
+    color: #4CAF50;
+    margin-bottom: 40px;
+    margin-top: 5%;
+}
+
+.firstrow
+{
+    display:flex; 
+    /* justify-content: space-around;   */
+    padding: 20px;
+}
+.firstname{
+    flex: 1;
+}
+
+.dob{
+    flex:2;
+}
+
+.secondrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+
+}
+
+.gender{
+    flex: 1;
+}
+
+.nation{
+    flex: 2;
+}
+
+.thirdrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+
+.father{
+    flex: 1;
+}
+
+.mother{
+    flex: 2;
+}
+
+.fourthrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+
+.address{
+    flex: 1;
+}
+.city{
+    flex: 2;
+}
+.fifthrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+.state{
+    flex: 1;
+}   
+.postal{
+    flex: 2;
+}
+.sixthrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+.country{
+    flex: 1;
+}
+
+.submit
+{
+    margin-bottom: 40px;
+    margin-left: 45%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px; 
+}

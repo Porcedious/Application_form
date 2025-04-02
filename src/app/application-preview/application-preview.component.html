@@ -1,0 +1,32 @@
+<!-- application-preview.component.html -->
+<div class="container mt-4">
+  <h2>Application Preview</h2>
+
+  <div *ngIf="applicationData">
+    <!-- Personal Information -->
+    <h3>Personal Information</h3>
+    <p><strong>Full Name:</strong> {{ applicationData.personalInfo?.fullName }}</p>
+    <p><strong>Date of Birth:</strong> {{ applicationData.personalInfo?.dob | date }}</p>
+    <p><strong>Gender:</strong> {{ applicationData.personalInfo?.gender }}</p>
+    <p *ngIf="applicationData.personalInfo?.nationality"><strong>Nationality:</strong> {{ applicationData.personalInfo?.nationality }}</p>
+    <p *ngIf="applicationData.personalInfo?.fatherName"><strong>Father's Name:</strong> {{ applicationData.personalInfo?.fatherName }}</p>
+    <p *ngIf="applicationData.personalInfo?.motherName"><strong>Mother's Name:</strong> {{ applicationData.personalInfo?.motherName }}</p>
+
+    <!-- Contact Information -->
+    <h3 *ngIf="applicationData.contactInfo?.email">Contact Information</h3>
+    <p *ngIf="applicationData.contactInfo?.primaryContact"><strong>Primary Contact:</strong> {{ applicationData.contactInfo?.primaryContact }}</p>
+    <p *ngIf="applicationData.contactInfo?.email"><strong>Email:</strong> {{ applicationData.contactInfo?.email }}</p>
+    
+    <h4>Current Address</h4>
+    <p>{{ getAddressString(applicationData.contactInfo?.currentAddress) }}</p>
+
+    <h4>Permanent Address</h4>
+    <p>{{ getAddressString(applicationData.permanentAddress) }}</p>
+
+    <!-- Extracurricular Activities -->
+    <h3>Extracurricular Activities</h3>
+    <p><strong>Hobbies:</strong> {{ applicationData.extracurricular?.hobbies }}</p>
+
+    <button class="btn btn-success" (click)="saveData()">Save</button>
+  </div>
+</div>

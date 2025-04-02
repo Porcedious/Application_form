@@ -1,0 +1,53 @@
+<div class="InfoLab">
+  <fieldset [formGroup]="group">
+    <legend>Contact Information</legend>
+    
+    <div formGroupName="currentAddress">
+      <h4>Current Address:</h4>
+      
+      <div class="form-row">
+        <div class="form-col">
+          <div class="form-group">
+            <label>Address<span class="required">*</span></label>
+            <input type="text" formControlName="address" class="form-control" placeholder="Address">
+          </div>
+        </div>
+        <div class="form-col">
+          <div class="form-group">
+            <label>City<span class="required">*</span></label>
+            <input type="text" formControlName="city" class="form-control" placeholder="City">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-col">
+          <div class="form-group">
+            <label>State<span class="required">*</span></label>
+            <input type="text" formControlName="state" class="form-control" placeholder="State">
+          </div>
+        </div>
+        <div class="form-col">
+          <div class="form-group">
+            <label>Postal Code<span class="required">*</span></label>
+            <input type="text" formControlName="postalCode" class="form-control" placeholder="Postal Code">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-col">
+          <div class="form-group">
+            <label>Country<span class="required">*</span></label>
+            <input type="text" formControlName="country" class="form-control" placeholder="Country">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-check">
+      <input class="check-box-input" type="checkbox" formControlName="sameAsCurrent">
+      <label class="form-check-label">Same as Current Address</label>
+    </div>
+  </fieldset>
+</div>

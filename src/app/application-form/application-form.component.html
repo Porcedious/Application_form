@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <h2 class="heading">Application Form</h2>
+  
+  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+    
+    <app-personal-info [group]="personalInfoGroup"></app-personal-info>
+    <app-contact-info [group]="contactInfoGroup"></app-contact-info>
+    <app-permanent-address 
+    [permanentGroup]="permanentAddressGroup" 
+    [extracurricularGroup]="extracurricularGroup">
+  </app-permanent-address>
+  <button type="submit" class="submit">Submit</button>
+  </form>
+</div> 

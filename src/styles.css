@@ -1,1 +1,293 @@
-/* You can add global styles to this file, and also import other style files */
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: whitesmoke;}
+
+.InfoLab
+{
+    background-color: white;
+    width: 90%;
+    margin-left: 40px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 1.8%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.heading
+{
+    text-align: center;
+    font-size: 30px;
+    color: #4CAF50;
+    margin-bottom: 40px;
+    margin-top: 5%;
+}
+
+.firstrow
+{
+    display:flex; 
+    padding: 20px;
+}
+.firstname{
+    flex: 1;
+}
+
+.dob{
+    flex:2;
+}
+
+.secondrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+
+}
+
+.gender{
+    flex: 1;
+}
+
+.nation{
+    flex: 2;
+}
+
+.thirdrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+
+.father{
+    flex: 1;
+}
+
+.mother{
+    flex: 2;
+}
+
+.fourthrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+
+.address{
+    flex: 1;
+}
+.city{
+    flex: 2;
+}
+.fifthrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+.state{
+    flex: 1;
+}   
+.postal{
+    flex: 2;
+}
+.sixthrow
+{
+    display:flex; 
+    justify-content: space-around;  
+    padding: 20px;
+}
+.country{
+    flex: 1;
+}
+
+.submit
+{
+    margin-bottom: 40px;
+    margin-left: 45%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px; 
+} */
+
+/* Updated CSS for Form Styling */
+body { margin: 0; background-color: whitesmoke;}
+.InfoLab {
+    background-color: white;
+    width: 90%;
+    margin: 35px auto; /* Center the form */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.InfoLab:hover {
+    transform: translateY(-2px);
+}
+
+fieldset {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2E7D32;
+    padding: 0 15px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    /* position: relative; */
+}
+
+.form-control {
+    width: 84%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* flex: 1; */
+    /* min-width: 0; */ 
+}
+
+.form-check {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .check-box-input {
+    width: 18px;
+    height: 18px;
+    accent-color: #4CAF50;
+  }
+  
+  .form-check-label {
+    font-weight: 500;
+    color: #424242;
+  }
+.form-control:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #424242;
+    /* vertical-align: middle; */
+}
+
+label span.required {
+    color: #d32f2f;
+    margin-left: 4px;
+    /* display: inline-block; */
+}
+
+textarea.form-control {
+    /* height: 100px; */
+    resize: vertical;
+  }
+
+.text-danger {
+    font-size: 0.85rem;
+    color: #d32f2f;
+    margin-top: 6px;
+    display: block;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* Layout Adjustments */
+.firstrow, .secondrow, .thirdrow {
+    display: flex;
+    gap: 30px; /* Consistent spacing */
+    margin-bottom: 20px;
+}
+
+.firstname, .dob, .gender, .nation, .father, .mother {
+    flex: 1;
+    min-width: 0; /* Prevent overflow */
+}
+
+.dob { flex: 1.5; }
+.dob-col { 
+    flex:1.2;
+    min-width: 0;
+ }
+
+/* Date Input Specific Styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23424242" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM5 7V5h14v2H5z"/></svg>');
+    cursor: pointer;
+    padding: 3px;
+}
+
+/* Select Dropdown Styling */
+select.form-control {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="%23424242"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+/* Submit Button Styling */
+.submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+}
+
+.submit:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(76, 175, 80, 0.3);
+}
+
+.submit:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .firstrow, .secondrow, .thirdrow {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .InfoLab {
+        width: 95%;
+        margin: 15px auto;
+        padding: 20px;
+    }
+    
+    legend {
+        font-size: 1.2rem;
+    }
+}
