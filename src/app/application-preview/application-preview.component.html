@@ -1,32 +1,126 @@
-<!-- application-preview.component.html -->
-<div class="container mt-4">
+<div class="container">
   <h2>Application Preview</h2>
-
-  <div *ngIf="applicationData">
-    <!-- Personal Information -->
-    <h3>Personal Information</h3>
-    <p><strong>Full Name:</strong> {{ applicationData.personalInfo?.fullName }}</p>
-    <p><strong>Date of Birth:</strong> {{ applicationData.personalInfo?.dob | date }}</p>
-    <p><strong>Gender:</strong> {{ applicationData.personalInfo?.gender }}</p>
-    <p *ngIf="applicationData.personalInfo?.nationality"><strong>Nationality:</strong> {{ applicationData.personalInfo?.nationality }}</p>
-    <p *ngIf="applicationData.personalInfo?.fatherName"><strong>Father's Name:</strong> {{ applicationData.personalInfo?.fatherName }}</p>
-    <p *ngIf="applicationData.personalInfo?.motherName"><strong>Mother's Name:</strong> {{ applicationData.personalInfo?.motherName }}</p>
-
-    <!-- Contact Information -->
-    <h3 *ngIf="applicationData.contactInfo?.email">Contact Information</h3>
-    <p *ngIf="applicationData.contactInfo?.primaryContact"><strong>Primary Contact:</strong> {{ applicationData.contactInfo?.primaryContact }}</p>
-    <p *ngIf="applicationData.contactInfo?.email"><strong>Email:</strong> {{ applicationData.contactInfo?.email }}</p>
-    
-    <h4>Current Address</h4>
-    <p>{{ getAddressString(applicationData.contactInfo?.currentAddress) }}</p>
-
-    <h4>Permanent Address</h4>
-    <p>{{ getAddressString(applicationData.permanentAddress) }}</p>
-
-    <!-- Extracurricular Activities -->
-    <h3>Extracurricular Activities</h3>
-    <p><strong>Hobbies:</strong> {{ applicationData.extracurricular?.hobbies }}</p>
-
-    <button class="btn btn-success" (click)="saveData()">Save</button>
+  <div *ngIf="applicationData" class="preview-container">
+  <!-- Left Column (Read-only Preview) -->
+  <div class="preview-column">
+  <h3>Personal Information</h3>
+  <p><strong>Full Name:</strong> {{ applicationData.personalInfo?.fullName }}</p>
+  <p><strong>Date of Birth:</strong> {{ applicationData.personalInfo?.dob | date }}</p>
+  <p><strong>Gender:</strong> {{ applicationData.personalInfo?.gender }}</p>
+  <p *ngIf="applicationData.personalInfo?.nationality"><strong>Nationality:</strong> {{ applicationData.personalInfo?.nationality }}</p>
+  <p *ngIf="applicationData.personalInfo?.fatherName"><strong>Father's Name:</strong> {{ applicationData.personalInfo?.fatherName }}</p>
+  <p *ngIf="applicationData.personalInfo?.motherName"><strong>Mother's Name:</strong> {{ applicationData.personalInfo?.motherName }}</p>
+  <h3 *ngIf="applicationData.contactInfo?.email">Contact Information</h3>
+  <p *ngIf="applicationData.contactInfo?.primaryContact"><strong>Primary Contact:</strong> {{ applicationData.contactInfo?.primaryContact }}</p>
+  <p *ngIf="applicationData.contactInfo?.email"><strong>Email:</strong> {{ applicationData.contactInfo?.email }}</p>
+  <h4>Current Address</h4>
+  <p>{{ getAddressString(applicationData.contactInfo?.currentAddress) }}</p>
+  <h4>Permanent Address</h4>
+  <p>{{ getAddressString(applicationData.permanentAddress) }}</p>
+  <h3>Extracurricular Activities</h3>
+  <p><strong>Hobbies:</strong> {{ applicationData.extracurricular?.hobbies }}</p>
+  <p><strong>Geeky:</strong> {{ applicationData.extracurricular?.geek }}</p>
   </div>
-</div>
+  <div class="preview-column">
+  <h3>Edit Information</h3>
+  <form>
+  <div class="edit-form">
+  <label class="form-label">Full Name</label>
+  <input [(ngModel)]="applicationData.personalInfo.fullName" name="fullName" class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Date of Birth</label>
+  <input type="date" [(ngModel)]="applicationData.personalInfo.dob" name="dob" class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Gender</label>
+  <select style="width: 97.5%;" [(ngModel)]="applicationData.personalInfo.gender" name="primaryContact" class="form-control">
+  <option value="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+  </select>
+  </div>
+  <hr >
+  <!-- Current Address Section -->
+  <div class="mb-3">
+  <label class="form-label">Current Address : Street</label>
+  <input [(ngModel)]="applicationData.contactInfo.currentAddress.address"
+          name="currentAddress-street"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">City</label>
+  <input [(ngModel)]="applicationData.contactInfo.currentAddress.city"
+          name="currentAddress-city"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">State</label>
+  <input [(ngModel)]="applicationData.contactInfo.currentAddress.state"
+          name="currentAddress-state"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Postal Code</label>
+  <input [(ngModel)]="applicationData.contactInfo.currentAddress.postalCode"
+          name="currentAddress-postalCode"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Country</label>
+  <input [(ngModel)]="applicationData.contactInfo.currentAddress.country"
+          name="currentAddress-country"
+          class="form-control">
+  </div>
+  <hr >
+  <!-- Permanent Address Section -->
+  <div class="mb-3">
+  <label class="form-label">Permanent Address : Street</label>
+  <input [(ngModel)]="applicationData.permanentAddress.address"
+          name="permanentAddress-street"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">City</label>
+  <input [(ngModel)]="applicationData.permanentAddress.city"
+          name="permanentAddress-city"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">State</label>
+  <input [(ngModel)]="applicationData.permanentAddress.state"
+          name="permanentAddress-state"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Postal Code</label>
+  <input [(ngModel)]="applicationData.permanentAddress.postalCode"
+          name="permanentAddress-postalCode"
+          class="form-control">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Country</label>
+  <input [(ngModel)]="applicationData.permanentAddress.country"
+          name="permanentAddress-country"
+          class="form-control">
+  </div>
+  <hr >
+  <div class="mb-3">
+  <label class="form-label">Hobbies</label>
+  <input [(ngModel)]="applicationData.extracurricular.hobbies" name="hobbies" class="form-control">
+  <label class="form-label">Geeky</label>
+  <select style="width: 97.5%;" [(ngModel)]="applicationData.extracurricular.geek" name="geek" class="form-control">
+  <option value="Choose">Choose</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+  </select>
+  </div>
+  </form>
+  </div>
+  </div>
+  <div class="button-group">
+  <button type="button" class="btn btn-primary me-2" (click)="goBack()">Back to Form</button>
+  <button type="button" class="btn btn-success" (click)="saveData()">Save Application</button>
+  </div>
+  </div>
